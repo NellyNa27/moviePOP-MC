@@ -27,3 +27,17 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 ); 
+
+
+function Componente ({titulo, children}) {
+  return (
+    
+    <div>
+      <div className="fondo1"></div>
+      <h1>{titulo}</h1>
+      <div>{children}</div>
+    </div>
+  );
+};
+ReactDOM.render(<Componente titulo="Título 1">HOLA DESDE MI CASA</Componente>, document.getElementById("root"),
+);

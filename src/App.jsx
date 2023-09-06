@@ -1,21 +1,18 @@
+import React from "react";
+import logoPop from "./img/logoPop.png";
+import cuadroR from "./img/cuadroR.png";
 import "./App.css";
-import Card from "./Components/Card";
-//import ShowHide from "./Components/showHide";
-import vehicles from "./data/vehicles.js";
 
 function App() {
-  const vehicleList = vehicles.map((v) => {
-    return <Card title={v.name} description={v.description} />;
-  });
-
-  return (
-    <div className="App">
-      <h1>MOVIE POP</h1>
-      <div className="container">
-        {vehicleList}</div>
-
+    return (
+    <div>
+        <div className="cuadroR">
+        <img src={cuadroR} />{" "}
+        </div>
+        <div className="imgPop">
+        <img src={logoPop} />{" "}
+        </div>
     </div>
-  );
+    );
 }
-
 export default App;

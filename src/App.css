@@ -1,9 +1,15 @@
-.App h1 {
-    text-align: center;
-}
-.container{
+
+.imgPop {
+    position: absolute;
+    height: 100vh;
+    width: 180vh;
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.cuadroR{
+    position: absolute;
+    z-index: -1;
+    
 }
