@@ -1,9 +1,9 @@
-import React from "react";
+//import React from "react";
 import logoPop from "./img/logoPop.png";
 import cuadroR from "./img/cuadroR.png";
-import "./home_page/HomePage.css";
+import "./LogoPage.css";
 
-function HomePage() {
+function LogoPage() {
     return (
     <div>
         <div className="cuadroR">
@@ -15,4 +15,4 @@ function HomePage() {
     </div>
     );
 }
-export default HomePage;
+export default LogoPage;
