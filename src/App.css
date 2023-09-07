@@ -10,6 +10,12 @@
 }
 .cuadroR{
     position: absolute;
+    height: 100vh;
+    width: 180vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: -1;
+    
     
 }
