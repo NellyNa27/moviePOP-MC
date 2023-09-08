@@ -1,34 +1,35 @@
-import "./App.css";
-//import Card from "./Components/Card";
-//import ShowHide from "./Components/showHide";
-//import vehicles from "./data/vehicles.js";
-import LogoPage from "./home_page/logoPage";
-import { useState } from "react";
+import './App.css'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [logoPop, setLogo] = useState(true);
-  // Esperar 5 segundos para que se vea la principal
-  setTimeout(() => {
-    setLogo (false);
-    }, 5000);
 
-    if (logoPop) {
-      return (
-        <LogoPage />
-        );
+    //inicamos data como un array vacio
+    const [movies, setMovies] = useState ([]) 
+
+    const movieData = async () => {
+        const url = "https://api.themoviedb.org/3/movie/550?api_key=94adc9ea07c8dd3909755da8a521ec9e"
+        const res = await fetch(url)
+        const data = await res.json()
+        setMovies(data.results)
+        console.log(data);
     }
-  /*const vehicleList = vehicles.map((v) => {
-    return <Card title={v.name} description={v.description} />;
-  });
-
-  return (
-    <div className="AppHome">
-      <h1>MOVIE POP</h1>
-      <div className="container">
-        {vehicleList}</div>
-
-    </div>
-  );*/
+    useEffect(() => {
+        //obtengo los datos desde la API 
+        movieData()
+    }, [])
+    return (
+        <div>
+            {
+                //renderizamos data desde un mapeo del array
+            movies.map (movie => (
+                <div key= {movie.id}> {movie.name}
+                    <img src= {`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt= {movie.original_title}/>
+                    <p> </p>
+                </div>
+                ))
+            }
+        </div>
+    )
 }
 
 export default App
